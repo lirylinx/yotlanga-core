@@ -1,0 +1,330 @@
+{% extends "base.html" %} {% load static %} {% block titulo %} yotlanga - Bem vindo{% endblock %} {% block link %} {% endblock %} {% block css %}
+<style>
+    header {
+        display: hide;
+    }
+    /* File Input
+   ========================================================================== */
+    
+    .file-input {
+        position: relative;
+    }
+    
+    .file-input .file-url-wrapper {
+        overflow: hidden;
+        padding-left: 10px;
+    }
+    
+    .file-input input.file-url {
+        width: 100%;
+    }
+    
+    .file-input .btn,
+    .file-input .btn-large {
+        float: left;
+        height: 3rem;
+        line-height: 3rem;
+    }
+    
+    .file-input span {
+        cursor: pointer;
+    }
+    
+    .file-input input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    
+    .file-input input[type=file]::-webkit-file-upload-button {
+        display: none;
+    }
+    
+    .file-url-wrapper,
+    input,
+    label {
+        opacity: 0;
+    }
+    
+    .yotlanga-interface-panel,
+    .side-nav,
+    .tabs {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .tabs .indicator {
+        height: 3px;
+        background-color: #C62828 !important;
+    }
+    
+    .tabs .tab a:hover,
+    .tabs .tab a.active {
+        color: #C62828 !important;
+    }
+    
+    .tabs .tab a {
+        font-size: 13px;
+        color: #333;
+        text-transform: capitalize
+    }
+    
+    .yo-tab-bottom {
+        height: 3px;
+        background-color: #f2f2f2;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+{% endblock %} {% block content %}
+
+<div class="yo-container">
+
+    <div class="row">
+
+        <div class="yo-perfil-usuario-painel col s12">
+
+            <div class="col s4 m4">
+                <img width="120px" height="120px" class="yo-img-perfil img-circle" src="{% url 'index' %}media/{{ usuario_logado.imagem }}"> {% if usuario_logado %} {% if user_perfil.username == usuario_logado.username %}
+                <form action="{{ usuario_logado.username }}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="file-input input-input ">
+                        <div class="yo-btn yo-btn-default yo-btn-xst"><i class="fa fa-photo"></i>
+                            <!-- <input type="file" multiple> -->
+                            {{ form.imagem }}
+                        </div>
+
+                        <div class="file-url-wrapper pull-right">
+                            <input class="file-url validate " type="text" placeholder="Carregue um ou varios ficheiros">
+                        </div>
+                    </div>
+                    <button type="submit"><i class="fa fa-send"></i></button>
+
+                </form>
+                {% endif %} {% endif %}
+
+                <div class="col s8 m12">
+                    {% if user_perfil %}
+                    <h5 class="yotlanga-user-name"><strong>{{ user_perfil.username }}</strong>
+
+                    </h5>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="yotlanga-perfil-container col s2 m8">
+            <div class="row">
+                <div class="">
+                    <ul class="tabs ">
+                        <li class="tab col s3"><a class="" href="#yo-tab-upload-info-basico">Informações básicas</a></li>
+                        <li class="tab col s3">
+                            <a href="#yo-tab-upload-info-tag" class="active">Editar Tags</a>
+                        </li>
+                        <li class="tab col s3"><a class="" href="#yo-tab-definicao-avancada">Defições avançadas</a></li>
+                        <div class="yo-tab-bottom"></div>
+                    </ul>
+                </div>
+                <!-- <div id="test1" class="col s12">Test 1</div> -->
+
+            </div>
+
+        </div>
+
+        <div class="yotlanga-perfil-usuario-info col s12 m4 right">
+            <div class="row">
+
+                <ul class="collapsible" data-collapsible="expadable">
+
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">playlist_play</i> playlist
+                        </div>
+                        <div class="collapsible-body center">
+                            <h5>Nenhuma playlist
+                                <h5>
+                                    <p> Crie uma playlist, algumas são geradas automaticamente
+                                        <p>
+
+                        </div>
+                    </li>
+                    <li>
+                        <li>
+
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">album</i> Album
+                                </div>
+                                <div class="collapsible-body center">
+                                    <h5>Nenhum album
+                                        <h5>
+                                            <p> Carregue teu album ou crie com as tuas músicas carregadas</p>
+                                            <p>Temos uma dica <a href="#"> aqui</i></a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">queue_music</i> Mixtape
+                                    </div>
+                                    <div class="collapsible-body center">
+                                        <h5>Nenhum Mixtape
+                                            <h5>
+                                                <p>Temos uma dica <a href="#"> aqui</i></a></p>
+                                    </div>
+                                </li>
+
+
+
+
+                                <li>
+
+                                    <div class="collapsible-header"><i class="material-icons">video_library</i>Videos
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class=" col s6"><img src="images/photo.png"> </div>
+                                            <div class=" col s6"><img class="media" src="images/photo.png"> </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class=" col s3"><img src="images/photo.png"> </div>
+                                            <div class=" col s3"><img src="images/photo.png"> </div>
+                                            <div class=" col s3"><img src="images/photo.png"> </div>
+                                            <div class=" col s3"><img src="images/photo.png"> </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">photo_library</i>Imagem
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s12 center">
+                                                <h5>Nenhuma imagem
+                                                    <h5>
+                                                        <p> carregue <a href="#"><i class="material-icons">backup</i></a></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">hdr_strong</i>seguidores
+                                    </div>
+                                    <div class="collapsible-body center">
+                                        <h5>Ops! Nenhum seguidor
+                                            <h5>
+                                                <p> publique teus trabalhos e seja seguido
+                                                    <a href="#"><i class="material-icons">public</i>aqui</a>
+                                                </p>
+
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">hdr_weak</i>seguindo
+                                    </div>
+                                    <div class="collapsible-body center">
+                                        <p> Explore e crie novas conexoes
+                                            <a href="#"><i class="material-icons">public</i>aqui</a>
+                                        </p>
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">autorenew</i> Republicacoes
+                                    </div>
+                                    <div class="collapsible-body center">
+                                        <h5>Ops! Nenhuma republicação
+                                            <h5>
+                                                <p> Explore e crie novas conexoes
+                                                    <a href="#"><i class="material-icons">public</i>aqui</a>
+                                    </div>
+                                </li>
+                                <li>
+
+                                </li>
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">share</i> Partilha
+                                    </div>
+                                    <div class="collapsible-body center">
+                                        <h5>Nenhuma partilha
+                                            <h5>
+                                                <p> Explore e crie novas conexoes
+                                                    <a href="#"><i class="material-icons">public</i>aqui</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <li>
+                                        <div class="collapsible-header"><i class="material-icons">people</i> Paticipacoes
+                                        </div>
+                                        <div class="collapsible-body center">
+                                            <h5>Nenhuma Participação ainda
+                                                <h5>
+                                                    <p> Outros usuarios irão identificar-te em trabalhos por eles carregados e que fazes parte. Tambem podes identificar os outros usuarios!
+
+                                        </div>
+                                    </li>
+
+                                    <li>
+
+                                        <div class="collapsible-header"><i class="material-icons">devices</i> Encontre-nos
+                                        </div>
+                                        <div class="yo-btn-store">
+                                            <div class="row">
+                                                <img src="{% static 'yotlanga/images/appstore.svg' %}" class="col s6" alt="">
+                                                <img src="{% static 'yotlanga/images/playstore.png' %}" class="col s6" alt="">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %} {% block script %}
+<script>
+    // File Input url
+    $(document).on('change', '.file-input input[type="file"]', function() {
+        // var file_input = $(this).closest('.file-input');
+        // var url_input = file_input.find('input.file-url');
+        // var files = $(this)[0].files;
+        // var file_names = [];
+        // for (var i = 0; i < files.length; i++) {
+        //     file_names.push(files[i].name);
+        // }
+        // url_input.val(file_names.join(", "));
+        // url_input.trigger('change');
+
+        // $(this).submit();
+        // alert($(this)[0].files);
+    });
+</script>
+{% endblock %}
