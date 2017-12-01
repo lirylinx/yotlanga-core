@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="{% static 'css/icon.css' %}" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="{% static  'css/font-awesome.min.css' %}" media="screen,projection" />
+    <!--Import estilo.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilo.css' %}" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>{% block titulo %} {% endblock %}</title>
+</head>
+{% block css %}{% endblock %}
+
+<style>
+    #usuario_controlo {
+        position: absolute;
+        top: 64px;
+        width: 280px;
+        opacity: 0;
+        left: 897px;
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="yotlanga-interface ">
+        <header class="yo-hide-on-deskto yo-hide-on-perfil">
+            <nav class="">
+                <div class="nav-wrapper  red darken-3 ">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'images/yotlanga.png' %}" class="brand-logo yo-brand-logo" />
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        {% if usuario_logado %}
+                        <!-- <li>{{ usuario_logado.username }}</li> -->
+                        <li><a href="#"><i class="fa fa-fw fa-search"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"><span class="yo-label yo-label-blue">2</span></i> </a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-bell"></i></a></li>
+                        <li><a href="#"><i class="fa fa-upload"></i></a></li>
+                        <!-- <li class="pull-right">
+                            <a class="btn btn-floating waves-effect waves-light dropdown-button" href="#" data-activates="usuario_controlo"><img width="41px" class="circle" src="{% static 'yotlanga/images/photo.png' %}" /> </a>
+                        </li> -->
+
+
+
+
+                        <li>
+                            <a class="dropdown-button yo-nav-usuario-btn " href="#!" data-activates="usuario_controlo"><img width="41px" class="circle" src="{% url 'index' %}media/{{ usuario_logado.imagem }}" /></a>
+                        </li>
+
+                        <ul id="usuario_controlo" class="dropdown-content">
+                            <li>
+                                <!-- {% if usuario_logado.imagem %} -->
+                                <a href="#!"><img width="100%" class="circle" src="{{ usuario_logado.imagem.url }}" /> </a>
+                                <!-- {% else %}
+                                <a href="#!"><img width="41px" class="circle" src="{% static 'yotlanga/images/photo.png' %}" /></a>
+                                {% endif %} -->
+                            </li>
+                            <li><a href="#!">two</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#!">three</a></li>
+                        </ul>
+
+                        <!-- <ul id="usuario_controlo" class="dropdown-content">
+                            <li><a href="#">teste</a></li>
+                            <li><a href="#">teste</a></li>
+                            <li><a href="#">teste</a></li>
+                        </ul> -->
+
+                        {% else %}
+                        <li><a class="yo-btn   yo-btn-transparente " href="{% url 'entrar' %}">Entrar</a> ou </li>
+                        <li><a class="btn waves-effect orange" href="{% url 'registrar' %}">registrar</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- fim cabecalho -->
+        {% block content %} {% endblock %}
+
+
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/forms.js' %}"></script>
+
+    <!-- <script type="text/javascript" src="{% static 'js/yo_common.js' %}"></script> -->
+    <script>
+        $(document).ready(function() {
+            $(".yo-nav-usuario-btn").click(function() {
+                $("#usuario_contolo").attr("style", " position: absolute;\
+        top: 64px;\
+        width: 280px;\
+        opacity: 1;\
+        left: 897px;\
+        display: block;");
+
+            });
+        });
+    </script>
+    {% block script %}{% endblock %}
+
+</body>
+
+</html>

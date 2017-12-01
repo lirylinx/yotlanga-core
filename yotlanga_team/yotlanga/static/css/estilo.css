@@ -1,0 +1,961 @@
+@import url("nouislider.css");
+################################ GLOBAL ##################################### * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    /*max-width: 2000px;*/
+    font: 12px/1.4 Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+ margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background: #f2f2f2 none repeat scroll 0% 0%;
+    color: #333;
+    /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+}
+
+.yo-audio-list-container {
+    background-color: #fff;
+}
+
+.yo-badge-username {
+    color: #999;
+    font-weight: 400;
+    padding: 0 65px 4px 0;
+}
+
+.yo-txt-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: normal;
+}
+
+.yo-badge-title {
+    padding: 0 0 20px;
+    color: #333;
+}
+
+.yo-badge-estatistica {
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+}
+
+.yo-badge-audio-duration {
+    font-size: 12px;
+    color: #999;
+}
+
+.yo-badge-link {
+    display: block;
+    overflow: hidden;
+    padding: 15px 10px;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.yo-btn-login {
+    margin-right: 6px;
+    height: 36px;
+    padding: 0.3rem 2rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 36px;
+    white-space: nowrap;
+    font-weight: 100;
+    text-align: center;
+    font-size: 1rem;
+    /*vertical-align: baseline;*/
+    box-sizing: border-box;
+}
+
+.yo-opacity-transition {
+    transition: opacity .2s linear;
+}
+
+.yo-btn-transparente {
+    background: 0 0;
+    color: #fff;
+    border-color: #ccc;
+    border: 1px solid;
+}
+
+.inline {
+    display: inline;
+}
+
+POSICIONAR BEM OS ELEMENTOS DEVIDO A BARRA LATERAL
+/*painel audio perfil
+  BUG: quando apagado a classe o container extende nas laterais
+*/
+
+.yo-perfil-audio-painel {}
+
+.yo-perfil-usuario-painel {
+    height: 215px;
+    background-color: #5d5d5d;
+}
+
+.yo-container {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+/*audio perfil imagem artwork*/
+
+.yo-audio-artwork {
+    background-color: white;
+    height: 250px;
+    margin: 15px;
+}
+
+
+/*dispositovos grandes */
+
+@media(min-width: 902px) {
+    /*painel de usuario */
+    #yo-procurar-interface {
+        padding-left: 300px;
+    }
+    .button-collapse {
+        display: none;
+    }
+    .yo-perfil-audio-painel {
+        height: 300px;
+        background-color: #5d5d5d;
+        /*margin-top: -25px;*/
+    }
+    /*perfil audio*/
+    /*.yo-audio-info {
+
+    padding-top: 15px;
+  }*/
+    .yo-audio-item-media-artwork img {
+        width: 100%;
+        height: 100%;
+    }
+    .yo-font-14 {
+        font-size: 14px;
+        line-height: 14px;
+        /*font-weight: 100;*/
+    }
+    .yo-font-12 {
+        font-size: 12px;
+        line-height: 12px;
+        /*font-weight: 100;*/
+    }
+    /*index -- tendencia*/
+    .yo-index-painel {
+        background: url("../images/yoJumb.png");
+        height: 450px;
+        background-position: 0 791px;
+    }
+    .yo-index-tendencia-texto {
+        font-size: 24px;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+    .yo-item-audio-action {
+        margin: 20px 10px;
+    }
+    .row {
+        margin-top: 10px;
+    }
+    /*section carregar */
+    .yo-carregamento-box {
+        border: 1px solid #f2f2f2;
+        min-height: 500px;
+        /*width: 600px;*/
+        /*margin-left: 50px;*/
+        /*margin-right: 50px;*/
+        padding-left: 25px;
+        padding-right: 25px;
+        box-shadow: 0 2px 12px -5px rgba(0, 0, 0, .1);
+        /*background-color: #fff;*/
+        /*, 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);*/
+    }
+    .yo-carregamento-box-titulo {
+        padding: 36px 0 0;
+        font-size: 24px;
+        line-height: 1;
+        font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+    }
+    .yo-tab-planospro-container {
+        padding: 10px 50px;
+    }
+    .yo-tab-planospro-container {
+        padding: 20px 50px;
+    }
+    #yo-tab-estatistica>.row {
+        background-color: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .yo-estatistica-info .row {
+        background-color: #fff;
+        height: 300px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        /*padding-top: 10px;*/
+    }
+    /*section brevemente */
+    .yo-center-element {
+        padding: 2% 25%;
+    }
+}
+
+
+/*fim dispositivos grandes */
+
+
+/*mover depois*/
+
+.yo-icon {
+    width: 100%;
+}
+
+
+/*tags */
+
+.yo-tags {
+    margin: 10px 0 18px 10px;
+}
+
+
+/*perfil audio*/
+
+.yo-audio-info {
+    margin-top: 15px;
+}
+
+.yo-label {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.yo-label-background {
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.yo-label-audio-genero .yo-label-background {
+    background-color: #BFBABA;
+}
+
+
+/*imagem artwork*/
+
+.yo-audio-artwork img {
+    width: 100%;
+    height: 100%;
+}
+
+.yo-btn-group {
+    padding: 0px 0.10rem;
+    font-size: 12px;
+    text-transform: lowercase;
+}
+
+.yo-inline i {
+    font-size: 14px;
+}
+
+.yo-btn {
+    display: inline-block;
+    /* padding: 6px 8px; */
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    /* border: 1px solid transparent; */
+    border-radius: 4px;
+}
+
+.yo-btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.yo-btn-default:focus,
+.yo-btn-default.focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+}
+
+.yo-btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.yo-inline li {
+    display: inline-block;
+}
+
+.yo-btn-control-info {
+    color: gray;
+}
+
+.divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.yo-perfil-audio-other {
+    background-color: #fff;
+}
+
+.img-circle {
+    border-radius: 50%
+}
+
+.yo-comentario img {
+    width: 20px;
+    height: 25px;
+}
+
+.yo-lista-comentario-in-comentario .yo-comentario img {
+    width: 10px;
+    height: 25px;
+}
+
+
+/*copiado do bootstrap*/
+
+.yo-media-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.yo-media {
+    margin-top: 15px;
+}
+
+.yo-media:first-child {
+    margin-top: 0;
+}
+
+.yo-media,
+.yo-media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.yo-media-body {
+    width: 10000px;
+}
+
+.yo-media-object {
+    display: block;
+}
+
+.yo-media-object.img-thumbnail {
+    max-width: none;
+}
+
+.yo-media-right,
+.yo-media>.pull-right {
+    padding-left: 10px;
+}
+
+.yo-media-left,
+.yo-media>.pull-left {
+    padding-right: 10px;
+}
+
+.yo-media-left,
+.yo-media-right,
+.yo-media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.yo-media-middle {
+    vertical-align: middle;
+}
+
+.yo-media-bottom {
+    vertical-align: bottom;
+}
+
+.yo-media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.yo-btn-store {
+    padding: 10px;
+}
+
+
+/*Esconder alguns elementos em caso de mobile*/
+
+.yo-esconder,
+.yo-hide-on-desktop {
+    display: none;
+}
+
+
+/*dispositivos pequenos  e medios*/
+
+@media(max-width: 991px) {
+    .yo-perfil-audio-painel {
+        height: 300px;
+        background-color: #5d5d5d;
+        background: url("../images/view640.png") center;
+        /*margin-top: -25px;*/
+    }
+    .yo-audio-artwork,
+    .yo-hide-on-mobile {
+        display: none;
+    }
+    .yo-btn-group .yo-btn {
+        padding: 6px 0.6rem;
+        font-size: 0.9em;
+        text-transform: lowercase;
+    }
+    .yo-inline i {
+        font-size: 11px;
+    }
+    .yo-container {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    /*  index  -- tendencia */
+    .yo-index-painel {
+        background-color: #5d5d5d;
+        height: 200px;
+    }
+    .yo-index-painel img {
+        /*margin-top: -40px;*/
+        width: 100%;
+        height: 100%;
+    }
+    .yo-audio-item-media-artwork img {
+        width: 60px;
+        height: 60px;
+    }
+    .yo-font-14 {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .yo-hide-on-desktop {
+        display: block;
+    }
+    /*.yo-index-tendencia-texto {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 0px;
+  }*/
+    .yo-item-audio-recomendado .row {
+        margin: 0;
+    }
+    /*section carregar */
+    .yo-carregamento-box-titulo {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 0.8rem;
+    }
+    .yo-estatistica-info .row {
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        /*padding-top: 10px;*/
+    }
+    /*section brevemente */
+    .yo-center-element h1 {
+        font-size: 3rem;
+    }
+}
+
+
+/*fim dispositivo pequenos e medios */
+
+
+/*dispositivos pequenos*/
+
+@media (max-width: 600px) {
+    .yo-carregar-track-info-empty img {
+        width: 100%
+    }
+}
+
+
+/* dispositivos medios */
+
+@media(min-width: 601px) {
+    .yo-hide-on-mobile {
+        display: none;
+    }
+    .yo-estatistica-info .row {
+        background-color: #fff;
+        height: 300px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        /*padding-top: 10px;*/
+    }
+}
+
+.yo-prefixo {
+    position: absolute;
+    width: 3rem;
+    font-size: 2rem;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.yo-btn-control-info .yo-btn {
+    padding: 0px 0.2rem;
+}
+
+.yo-btn-control-info {
+    margin: 0;
+    margin: 10px 2px;
+}
+
+.yo-btn-control-action {
+    margin: 5px;
+}
+
+.yo-brand-logo {
+    width: 240px;
+    margin: 5px;
+}
+
+
+/*PERFIL USUARIO */
+
+.yotlanga-perfil-usuario-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 2%;
+}
+
+
+/*espacamento do botao que altera imagem de perfil no painel */
+
+.yo-btn {
+    padding: 0.3rem 1rem;
+    border: 1px solid #ccc;
+}
+
+.yo-perfil-usuario-painel {
+    padding: 10px;
+}
+
+.yo-btn-alterar-painel {}
+
+
+/*  index */
+
+
+/*.yo-index-painel{
+  background-color: #5d5d5d;
+  /*background-image: url("../images/view640.png");*/
+
+height: 300px;
+
+/*background-position: 0 20px  ;*/
+
+.yo-audio-list-container {
+    height: 96px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+p.yo-badge-title {
+    margin-top: 0;
+    margin-bottom: -11px;
+}
+
+.yo-audio-item-media-artwork {}
+
+.yo-audio-item-info i {
+    font-size: 15px;
+}
+
+.yo-audio-item {
+    margin-bottom: 35px;
+}
+
+.yo-container {
+    background-color: #fff;
+}
+
+.yo-btn-index-carregar {
+    margin-top: 1rem;
+    height: 46px;
+}
+
+.yo-btn-index-carregar button {
+    height: 46px;
+    border-radius: 10px;
+}
+
+.yo-font-light {
+    font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+    font-weight: 100;
+}
+
+.yo-painel {
+    color: #fff;
+    overflow: hidden;
+    border-top: 4px solid #f50;
+    background-color: #666;
+    height: 450px;
+    background: url(images/yoJumb.png) 0 0/conver no repeat;
+}
+
+#yo-procura {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.input-field button {
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+
+/*section carregar*/
+
+.yo-carregamento-box .yo-btn-transparente {
+    border: 1px solid #981b1b;
+    color: #981b1b;
+    text-transform: uppercase;
+}
+
+.yo-carregar-btn-signup {
+    padding: 10px;
+}
+
+.yo-hide {
+    display: none;
+}
+
+.yo-carregamento-rodape li {
+    display: inline;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.yo-registrar {
+    background: url("../ico/background.jpg") cover;
+}
+
+#yo-id-carregar-Minha-faixa {
+    height: 500px;
+}
+
+.yo-carregar-track-info-empty {
+    margin-top: 6%;
+    /*width: 600px;*/
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.yo-center-element {
+    margin-top: 5px;
+    /*width: 600px;*/
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.yo-carregamento-box .tab {
+    text-transform: capitalize;
+}
+
+.yo-carregamento-box .tab a {
+    font-size: 13px;
+    color: #333;
+    padding: 0;
+}
+
+.yo-texto-titulo {
+    font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+    font-size: 24px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+font-family: "Interstate",
+"Lucida Grande",
+"Lucida Sans Unicode",
+"Lucida Sans",
+Garuda,
+Verdana,
+Tahoma,
+sans-serif;
+font-size: 20px;
+padding-top: 20px;
+margin-bottom: 30px;
+line-height: 1.3;
+font-weight: 400;
+
+}
+.yo-strong {}
+.yo-carregar-estatistica-item-info p {
+    line-height: 1.4;
+    font-size: 16px;
+}
+.yo-carregar-estatistica-card-img {
+    background-color: #c8c3c3;
+    height: 300px;
+}
+.yo-carregar-estatistica-card-img img {
+    height: 100%;
+    width: 100%;
+}
+.yo-tab-estatistica {
+    background-color: #fff;
+}
+#yo-tab-faixa {}
+.yo-carregar-info {
+    font-size: 13px;
+    padding: 0 10px;
+}
+.yo-font-large {
+    font-size: 18px;
+}
+.yo-basic-font {
+    font-family: "Interstate";
+}
+.yo.basic-font-info {
+    font-family: serif;
+}
+.yo-carregar-track-info-empty .yo-basic-font {
+    font-size: 16px;
+}
+.yo-font-16 {
+    font-size: 16px;
+}
+.yo-tab-planospro-container p {
+    font-size: 20px;
+}
+#yo-tab-planos-pro {
+    background-color: #fff;
+}
+.yo-brevemente-container {
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 0, .1);
+}
+.side-nav li>a {
+    font-weight: 100;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+.yo-painel-artwork {
+    height: 200px;
+}
+.yo-painel-artwork img {
+    width: 100%;
+    height: 100%;
+}
+
+/*section painel */
+#yo-tab-visao-geral .card {
+    background-color: #1f2326;
+    color: #fff;
+}
+#yo-tab-visao-geral .card .card-content span {
+    color: gray;
+}
+#yo-tab-visao-geral .card .card-action a {
+    font-size: 12px;
+    text-transform: capitalize;
+    color: rgba(209, 209, 209, 0.9);
+}
+.yotlanga-interface-panel,
+.side-nav,
+.tabs {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+.side-nav {
+    top: 64px;
+}
+.side-nav .subheader {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+}
+.yo-card-background {
+    background-color: #333;
+}
+.yo-card-artwork {
+    height: 450px;
+}
+.yo-card-background img {
+    width: 100%;
+    height: 100%;
+}
+.card-image {
+    max-height: 157px;
+}
+.yo-texto-gray {
+    color: gray;
+}
+.yo-navegacao {
+    margin-bottom: 30px;
+}
+div.yo-song-item {
+    margin: 5px;
+    border: 1px solid #302626;
+    float: left;
+    width: 100%;
+    height: 300px;
+}
+div.yo-song-item-artwork {
+    height: 180px;
+}
+div.yo-song-item:hover {
+    border: 1px solid #777;
+}
+div.yo-song-item img {
+    width: 100%;
+    height: 100%;
+}
+div.yo-song-item-descricao {
+    padding: 15px;
+}
+.yotlanga-interface-draft {
+    background-color: #1b1b1b;
+}
+.yo-h5 {
+    font-size: 1.64rem;
+    line-height: 40px;
+}
+.yo-tab-control-view-item a {
+    margin-left: 5px;
+}
+.yo-tab-control-view-item {
+    margin-bottom: 5px;
+}
+.yo-navegacao hr {
+    margin: -1px;
+}
+
+/*yoplayer compact */
+div.yo-player-compact {
+    margin: 5px;
+    border: 1px solid #302626;
+    float: left;
+    width: 100%;
+    height: 400px;
+    padding: 15px;
+}
+div.yo-player-artwork {
+    height: 180px;
+}
+div.yo-player-compact:hover {
+    border: 1px solid #777;
+}
+div.yo-player-artwork img {
+    width: 100%;
+    height: 100%;
+}
+div.yo-player-controlo-container {
+    padding: 15px;
+}
+#yo-player-barra-progresso {
+    margin-bottom: 10px;
+}
+.yo-player-controlo .btn-large i {
+    font-size: 3.6rem;
+}
+.yo-player-controlo .fa {
+    margin: 4px;
+    font-size: 1.5rem;
+}
+.yo-player-controlo-opcao {
+    margin-top: 15px;
+}
+.yo-player-controlo-opcao .fa {
+    font-size: .9rem;
+}
+
+/* login  */
+#login_usuario {
+    background: #fff none repeat scroll 0% 0%;
+    padding: 30px;
+    border-radius: 6px;
+}
+intput,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: white;
+}
+.yo-entrar-outras-contas .btn {
+    /* margin-top: 25px; */
+    
+    text-transform: capitalize;
+    /* width: 108px; */
+}
+.yo-fixed {
+    position: fixed;
+}
+.yo-nav-usuario-btn {
+    vertical-align: middle;
+    /* padding: 0; */
+}
+.nav-wrapper ul .yo-label {
+    position: relative;
+    top: 9px;
+    right: 7px;
+    text-align: center;
+    font-size: 9px;
+    padding: 2px 3px;
+    line-height: .9;
+}
+.yo-label-sucesso {
+    background-color: #00a65a !important;
+}
+.yo-label-danger {
+    background-color: #dd4b39 !important;
+}
+.yo-label-warning {
+    background-color: #f39c12 !important;
+}
+.yo-label-blue {
+    background-color: #0e5b92 !important;
+}
+.yo-opacity-hide {
+    opacity: 0;
+}
+.yo-wrap {
+    margin-left: 70px;
+    margin-right: 70px;
+}

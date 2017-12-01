@@ -1,0 +1,298 @@
+{% extends "base.html" %} {% load static %} {% block titulo %} yotlanga | Registra-te e faça parte desta comunidade de entretenimento{% endblock %} {% block link %} {% endblock %} {% block content %}
+
+<!-- inicio contentor  -->
+<div class="row yo-registrar">
+    <div class="col s12 m7 l5  xl5 offset-m3 offset-l6 offset-xl6">
+        <!-- <div class="row"> -->
+        <form class="col s12 m12" action="index.html" method="post">
+            <div class="row">
+                <!-- nome -->
+                <div class="input-field col s12 m12">
+                    <input type="text" id="nome" name="nome" class="validate" placeholder="John">
+                    <label for="nome" data-error="Apenas careacteres" data-success="certo">Nome</label>
+                </div>
+                <!-- apelido -->
+                <div class="input-field col s12 m12">
+                    <input type="text" id="apelido" name="apelido" class="validate" placeholder="Smith">
+                    <label for="apelido" data-error="Apenas caracteres" data-success="certo">Apelido</label>
+                </div>
+            </div>
+
+            <!-- </div> -->
+            <div class="row">
+                <!-- nome -->
+                <div class="input-field col s12 m12">
+                    <input type="text" id="username" name="username" class="validate" placeholder="liry linx">
+                    <label for="nome" data-error="Apenas caracteres, numero e underscore '_'" data-success="certo">Username</label>
+                </div>
+
+                <!-- email -->
+                <div class="row">
+                    <div class="input-field col s12 m12">
+                        <input type="email" id="email" name="email" class="validate" placeholder="meuemail@exemplo.com">
+                        <label for="email" data-error="Email invalido Ex: meuemail@exemplo.com" data-success="certo">Email</label>
+                    </div>
+
+                </div>
+
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12 m12">
+                        <input type="password" id="senha" name="senha" class="validate">
+                        <label for="apelido" data-error="Senha deve conter pelo menos 8 caracteres" data-success="certo">Senha</label>
+                    </div>
+                    <div class="input-field col s12 m12">
+                        <input type="password" id="senha_confirmar" name="senha_comfirmar" class="validate">
+                        <label for="senha_confirmar" data-error="Senha diferente" data-success="certo">Confirmar Senha</label>
+                    </div>
+
+                </div>
+
+
+                <!-- data de nascimento -->
+                <div class="row">
+                    <label class="col s12 m12">Data de Nascimento</label>
+                    <!-- dia -->
+                    <div class="col s12 m4">
+                        <select class="browser-default">
+                    <option value="" disabled selected>Dia</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                    </div>
+                    <!-- mes -->
+                    <div class="col s12 m4">
+                        <select class="browser-default">
+                    <option value="" disabled selected>Mes</option>
+                    <option>Janeiro</option>
+                    <option>Fevereiro</option>
+                    <option>Marco</option>
+                    <option>Abril</option>
+                    <option>Maio</option>
+                    <option>Junho</option>
+                    <option>Julho</option>
+                    <option>Agosto</option>
+                    <option>Setembro</option>
+                    <option>Outubro</option>
+                   <option>Novembro</option>
+                   <option>Dezembro</option>
+                 </select>
+                    </div>
+                    <!-- ano -->
+                    <div class="col s12 m4">
+                        <select class="browser-default">
+                    <option value="" disabled selected>Ano</option>
+                    <option value="1">2000</option>
+                    <option value="2">1999</option>
+                    <option value="3">1998</option>
+                  </select>
+                    </div>
+
+                </div>
+
+                <!-- sexo -->
+                <div class="row">
+                    <span class="col s12 m6">
+                    <input  class="with-gap" type="radio" name="sexo" id="masculino" checked  >
+                    <label for="masculino">Masculino</label>
+                  </span>
+                    <span class="col s12 m6">
+                    <input class="with-gap"  type="radio" name="sexo" id="feminino">
+                    <label for="feminino">Feminino</label>
+                  </span>
+
+                </div>
+
+                <!-- termos e condicoes -->
+                <div class="row">
+                    <p class="col s12 m12">
+                        <input type="checkbox" id="aceito">
+                        <label for="aceito">
+                    <span class="yo-paragrafo-termo">Ao clicar em Criar conta,
+                      você concorda com nossos <a href="#">Termos</a> e que leu
+                      nossa <a href="#">Política de Dados </a>, incluindo nosso
+                       Uso de <a href="#">Cookies</a>. Você pode receber
+                        notificações por SMS da yotlanga e pode cancelar
+                        o recebimento  quando quiser.</span>
+                  </label>
+                    </p>
+                </div>
+
+                <div class="yo-btn-criarConta ">
+                    <button class="btn waves-effect waves-light" type="submit" id="criar_conta" name="criar_conta"> Criar Conta
+              <i class="material-icons right"></i>
+              </button>
+                </div>
+        </form>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+{% endblock %} {% block script %}
+<script>
+    invalido = false;
+
+    /**
+     *
+     *   Habilitar botao submit apos aceitar os nossos termos e condicoes
+     */
+    function checkAceitoTermos() {
+        var aceito = $("#aceito");
+        var $btn = $("#criar_conta"); // Jquery object
+        if (aceito[0].checked == true) {
+            if ($btn.hasClass("disabled")) {
+                $btn.removeClass("disabled");
+            }
+        } else {
+            $btn.addClass("disabled");
+        }
+
+
+    }
+
+    /**
+     *
+     *   Verificar se a data foi escolhido corretamente
+     */
+    function checkData() {
+        var $sel = $("select");
+        $sel.each(function() {
+            $cur = $(this)[0];
+            if ($cur.selectedIndex == 0) {
+                $cur.setAttribute("style", "border: 1px solid red");
+                invalido = true;
+            } else {
+                $cur.setAttribute("style", "border: 1px solid #f2f2f2");
+            }
+        });
+    }
+
+    /**
+     *
+     *   Verificar se o element SELECT teve alguma alteracao de valor
+     */
+
+    function checkDataChange() {
+        $("select").change(function() {
+            $cur = $(this)[0];
+            if ($cur.selectedIndex == 0) {
+                $cur.setAttribute("style", "border: 1px solid red");
+                // invalido = true;
+            } else {
+                $cur.setAttribute("style", "border: 1px solid #f2f2f2");
+            }
+
+        });
+    }
+
+    function invalidClass($cur) {
+        if ($cur.hasClass("valid")) {
+            $cur.removeClass("valid");
+            $cur.addClass("invalid");
+
+        } else {
+            $cur.addClass("invalid");
+        }
+
+    }
+    /**
+     *   Verificar inputs se contem valores validos
+     */
+    function checkInput() {
+        var $in = $("input");
+        $in.each(function() {
+            var $cur = $(this);
+            if (jQuery.isEmptyObject($cur.val())) {
+                invalidClass($cur);
+                invalido = true;
+            }
+        });
+    }
+
+
+
+    function yoEach($elements, callback = callback()) {
+        $elements.each(function() {
+            callback($(this));
+        });
+    }
+
+    function checkInputValidNames($el) {
+
+
+        var re = /^[A-Za-z\s*]+$/
+        var re_apelido = /^[A-Za-z]+$/
+        var re_username = /\w+/ ///^[A-Za-z]+[1-9\s_]*[A-Za-z]$/
+
+
+        // var $in = $("input");
+        // if ($el[0].id == "nome" || $el[0].id != "apelido")
+
+        var test = false;
+        jQuery.trim($el.val());
+        if ($el[0].id == "nome")
+            test = re.test($el.val());
+        else if ($el[0].id == "apelido")
+            test = re_apelido.test($el.val());
+        else if ($el[0].id == "username")
+            test = re_username.test($el.val());
+
+        if (test) {
+            console.log("Valido");
+        } else {
+            console.log("invalido");
+            invalidClass($el);
+
+        }
+
+    }
+
+
+
+
+    /**
+     *   controlo_registro funcionando como metodo main 
+     *
+     */
+
+    function controlo_registro() {
+
+        checkAceitoTermos();
+
+        /* form eventos */
+        checkDataChange();
+        $("select").click(function(e) {
+            checkAceitoTermos();
+        });
+
+        $("#aceito").click(function(e) {
+            checkAceitoTermos();
+        });
+
+        $("input").change(function(e) {
+            checkAceitoTermos();
+        });
+
+        /* form regex valid  */
+        var $in = $('input#nome, input#apelido');
+        yoEach($in, checkInputValidNames)
+
+        $("#criar_conta").click(function(e) {
+            invalido = true;
+            checkData();
+            checkInput();
+            var $in = $('input#nome, input#apelido, input#username');
+            yoEach($in, checkInputValidNames)
+
+            if (invalido)
+                e.preventDefault();
+        });
+
+    }
+    $(document).ready(controlo_registro());
+</script>
+{% endblock %}

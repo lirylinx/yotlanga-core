@@ -1,0 +1,948 @@
+{% extends "base.html" %} {% load static %} {% block titulo %} yotlanga - Bem vindo{% endblock %} {% block link %} {% endblock %} {% block content %}
+<!-- interface principal -->
+<div class="yotlanga-interface">
+    <header class="yo-hide-on-desktop">
+        <nav>
+            <div class="nav-wrapper red darken-3 ">
+                <img src="images/yotlanga.png" class="brand-logo yo-brand-logo" />
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">entrar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- fim nav -->
+
+    </header>
+    <!-- fim cabecalho -->
+    <div class="yo-container">
+        <div class="yo-index-painel col s12">
+            <div class="row yo-hide-on-mobile">
+                <div class="col l9">
+                    <img src="{% static 'images/yotlanga.png' %}" class="brand-logo yo-brand-logo" />
+                </div>
+                <div class="col l3">
+                    <span class="yo-btn-login yo-opacity-transition yo-btn-transparente ">entrar</span>
+                    <span class="btn red darken-2"> criar conta</span>
+                </div>
+            </div>
+            <img class="yo-hide-on-desktop" src="i{% static 'mages/view640.png' %}" />
+        </div>
+
+        <div class="yo-index-pesquisa">
+            <div class="row">
+                <div class="yo-index-conteudo-acao col s12 l12 yo-center">
+                    <form class="col  s12 l7 ">
+                        <div class="input-field col s12 l10 push-l2">
+                            <!-- <i class="material-icons prefix">search</i> -->
+                            <!-- <i class="material-icons">close</i></button> -->
+
+                            <!-- <i class="material-icons prefix">search</i> -->
+                            <input type="search" id="yo-procura" name="yo-procurar" placeholder="Pesquise aqui   ..." required>
+                        </div>
+                        <div class="input-field col l2">
+                            <button style="height: 46px; margin-left: 23px;" type="submit" class="btn red darken-2 yo-hide-on-mobile" name="button"><i class="material-icons">search</i></button>
+                            <!-- <input type="submit" class="btn" value="d"> -->
+
+                        </div>
+                    </form>
+                    <div class="yo-hide-on-mobile col l1 ">
+                        <span class="yo-btn yo-font-light " style="margin-top: 1rem; font-size: 20px;"> ou </span>
+                    </div>
+
+                    <div class="yo-hide-on-mobile yo-btn-index-carregar col l2">
+                        <button class="btn red darken-2">Carregue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="yo-font-light yo-index-tendencia-texto col s12">
+ 
+    </div> -->
+        <div class="yo-audio-list-container">
+
+            <!-- row 1  recomendado-->
+            <div class="row">
+
+                <div class="yo-item-audio-recomendado">
+                    <h5 class="yo-font-light">Recomendado</h5>
+                    <div class="row">
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- recomendado 2 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- recomendado 3 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- recomendado 4 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- recomendado 5 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- recomendado 6 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- recomendado 7 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- recomendado 8 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- fim recomendado -->
+
+
+
+                </div>
+            </div>
+            <!-- fim row recomendado -->
+
+
+            <!-- row 2 carregados recentemente -->
+            <div class="row">
+
+                <div class="yo-item-audio-carregado-recentemente">
+                    <h5 class="yo-font-light">Carregado recentemente</h5>
+                    <div class="row">
+                        <!-- item 1 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 2 -->
+
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 3      -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 4  -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 5  -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- item 6  -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- fim row recente -->
+
+            <!-- row 3 noticias ultima hora -->
+            <div class="row">
+                <div class="yo-item-audio-noticia-ultima-hora">
+                    <h5 class="yo-font-light">Noticia de ultima hora</h5>
+                    <div class="row">
+
+                        <!-- item 1 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 2 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 3 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- item 4 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 5 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 6 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- fim row noticia ultima hora` -->
+
+            <!-- row 3 contas relacionais -->
+            <div class="row">
+                <div class="yo-item-audio-outras-contas">
+                    <div class="yo-item-audio-action col s12">
+                        <h5 class="yo-font-light">Conta <a class="btn red darken-3  right">Seguir 221,102</a></h5>
+                    </div>
+                    <div class="row">
+
+                        <!-- item 1 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 2 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 3 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- item 4 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 5 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 6 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- outras contas  -->
+
+            <!-- row 4 contas subscritas -->
+            <div class="row">
+                <div class="yo-item-audio-seguidores">
+                    <h5 class="yo-font-light">Seguidores</h5>
+                    <div class="row">
+
+                        <!-- item 1 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 2 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 3 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- item 4 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 5 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 6 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- fim row seguidores  -->
+
+
+            <!-- row 5 ver mais tarde -->
+            <div class="row">
+                <div class="yo-item-audio-ver-mais-tarde">
+                    <h5 class="yo-font-light col s12">Ver mais tarde</h5>
+                    <div class="row">
+
+
+                        <!-- item 1 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 2 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 3 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!-- item 4 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 5 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- item 6 -->
+                        <div class="yo-audio-item col col s12 m2">
+                            <div class="divider yo-hide-on-desktop"></div>
+                            <a class="yo-audio-item-link" href="#">
+                                <div class=" col s3 m12">
+                                    <div class="yo-audio-item-media-artwork">
+                                        <img src="{% static 'images/photo.png' %}" />
+                                    </div>
+                                </div>
+                                <div class="yo-audio-item-info col s9 m12">
+                                    <a href="#" class="yo-badge-username yo-font-14 yo-txt-truncate">Usuario</a>
+                                    <span class="right yo-badge-audio-duration yo-hide-on-desktop">5:52</span>
+                                    <a href="#">
+                                        <p class="yo-badge-title yo-font-14 yo-txt-truncate">Artista - titulo</p>
+                                    </a>
+                                    <span class="yo-badge-estatistica yo-hide-on-desktop"><i class="material-icons">headset</i>12.033 plays</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- fim row ver mais tarde  -->
+
+            <!-- mostrar mais-->
+            <div class="yo-index-expand col s12 center">
+                <a class="btn red darken-4">Explore mais </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+<div>
+</div>
+
+<div class="collapsible-header"><i class="material-icons">devices</i> Encontre-nos
+</div>
+<div class="yo-btn-store">
+    <div class="row">
+        <img src="{% static 'images/appstore.svg' %}" class="col s6 l2" alt="">
+        <img src="{% static 'images/playstore.png' %}" class="col s6 l2" alt="">
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

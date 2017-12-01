@@ -1,0 +1,424 @@
+{% extends "base.html" %} {% load static %} {% block titulo %} yotlanga - Bem vindo{% endblock %} {% block link %} {% endblock %} {% block content %}
+
+<div class="yo-wrap">
+    <div class="yo-carregamento-box white">
+        <div class="row">
+            <div class="col m12 ">
+
+                <div class="row">
+                    <div class="col m3">
+                        <div class="row">
+                            <div class="col m12">
+                                <div class="yo-box-carregamento-miniatura">
+
+                                </div>
+                            </div>
+                            <div class="col m12">
+                                <h6 class="yo-font-light"><strong>Estado do carregamento:</strong></h6>
+                                <div class="yo-carregamento-estado-info hide">
+                                    <p class="yo-font-light yo-font-12 yo-texto-gray">Carregamento terminado!</p>
+                                    <p class="yo-font-light yo-font-12"><span class=" yo-texto-gray"> O seu audio sera apresentado em:</span> <br/><a href="#">https://yotlanga/au3AlLd</a></p>
+                                </div>
+                                <div class=" center">
+                                    <div class="preloader-wrapper medium active ">
+                                        <div class="spinner-layer spinner-blue-only">
+                                            <div class="circle-clipper left">
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="gap-patch">
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="circle-clipper right">
+                                                <div class="circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6 class="yo-font-light"><strong>Qualidade de vídeo/áudio:</strong></h6>
+                                <p>
+                                    <i class="fa fa-exclamation-circle blue-text"></i> Os seus videos/audios serão processados mais rapidamente <br> se os codificar em um formato de ficheiro transmissivel e que <br> a nossa plataforma oferece suporte.
+                                    Para mais informações visite o nosso <a href="#">Centro de Ajuda</a>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col m9">
+
+                        <div class="row">
+                            <!-- <div class="col s12"> -->
+                            <div class="col s10">
+                                <div class="progress">
+                                    <div class="determinate" style="width: 95%;"><span class="yo-label yo-font-16 black-text text">Processando 95%</span></div>
+                                </div>
+                            </div>
+                            <div class="col s2">
+                                <a href="#" class="btn blue darken-1 pull-right">Publicar</a>
+                            </div>
+                            <div class="col s12">
+                                <a href="#" class="btn red white-text darken-2 pull-right">Cancelar</a>
+                                <p class="yo-font-light"> <i class="fa fa-exclamation-circle fa-2x blue-text"></i> Clique em "Publicar" para publicar o seu video para todos ou cancelar para interromper o carregamento</p>
+                            </div>
+
+                            <!-- </div> -->
+                            <div class="col s12">
+                            </div>
+                        </div>
+
+                        <!-- usuario registado  -->
+                        <div class="row">
+                            <div class="">
+                                <ul class="tabs ">
+                                    <li class="tab col s3"><a class="" href="#yo-tab-upload-info-basico">Informações básicas</a></li>
+                                    <li class="tab col s3">
+                                        <a href="#yo-tab-upload-info-tag" class="active">Editar Tags</a>
+                                    </li>
+                                    <li class="tab col s3"><a class="" href="#yo-tab-definicao-avancada">Defições avançadas</a></li>
+                                    <div class="yo-tab-bottom"></div>
+                                </ul>
+                            </div>
+                            <!-- <div id="test1" class="col s12">Test 1</div> -->
+
+                        </div>
+                        <!-- tab 1 upload  info basico-->
+                        <div id="yo-tab-upload-info-basico">
+
+                            <div class="col s12">
+
+                                <div class="row">
+                                    <form action="post" class="col s12">
+                                        <div class="col s7">
+                                            <div class="input-field col s12">
+                                                <!-- <span for="nome_ficheiro">Nome ficheiro</span> -->
+                                                <input type="text" id="nome_ficheiro" name="nome_ficheiro" class=" browser-default" style="width: 100%; height: 36px;">
+                                                <!-- <label for="nome_ficheiro" data-error="Somente letra e minimo 2" data-success="certo">Nome</label> -->
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <!-- <span for="nome_ficheiro">Nome ficheiro</span> -->
+                                                <textarea name="descricao_ficheiro" id="descricao_ficheiro" cols="3" rows="30" placeholder=" Descrição "></textarea>
+                                                <!-- <label for="nome_ficheiro" data-error="Somente letra e minimo 2" data-success="certo">Nome</label> -->
+                                            </div>
+
+                                            <div class="input-field col s12">
+                                                <!-- <span for="nome_ficheiro">Nome ficheiro</span> -->
+                                                <input type="text" id="tag_ficheiro" name="tag_ficheiro" class=" browser-default" style="width: 100%;" placeholder="  Entiquetas (Ex: musica, radio, hip hop, instrumental) ">
+                                                <!-- <label for="nome_ficheiro" data-error="Somente letra e minimo 2" data-success="certo">Nome</label> -->
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <p class="yo-font-light">Miniatura de video ou audio artwork <i class="fa fa-question-circle"></i></p>
+                                                <p class="yo-font-light">A Miniatura da imagem aparecerá quando tiver sido concluido o processamento do video/audio. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col s5">
+                                            <div class="col s12">
+                                                <select class="browser-default" name="carregamento_acesso" id="carregamento_acesso">
+                                                  <option  value="Publico" selected>Publico</option>
+                                                  <option value="Privado">Privado</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <span>Partilhar Tambem em:<br> </span>
+                                                <span class="col s4">
+                                                        <input type="checkbox" id="partilhar_fb" />
+                                                        <label for="partilhar_fb"><i class="fa fa-2x fa-facebook blue-text text-darken-4"></i></label>
+                                                </span>
+                                                <span class="col s4">
+                                                    <input type="checkbox" id="partilhar_twitter" />
+                                                    <label for="partilhar_twitter"><i class="fa fa-2x fa-twitter blue-text text-darken-1"></i></label>
+                                                </span>
+                                                <span class="col s4">
+                                                    <input type="checkbox" id="partilhar_youtube" />
+                                                    <label for="partilhar_youtube"><i class="fa fa-2x fa-youtube red-text text-darken-2"></i></label>
+                                                </span>
+
+                                                <div class="row">
+
+                                                    <div class="input-field col s12">
+                                                        <div class="divider"></div>
+                                                        <!-- <i class="fa fa-user prefix"></i> -->
+                                                        <a href="#!" class="prefix"><img width="41px" class="circle" src="/static/yotlanga/images/photo.png" /></a>
+
+                                                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                                        <label for="icon_prefix2">Adicionar uma mensagem</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col s12">
+                                                <select class="browser-default" name="carregamento_acesso" id="carregamento_acesso">
+                                                      <option  value="-1" selected>Adicionar à lista de reprodução ou album</option>
+                                                      <option>Criar uma lista ou album</option>
+                                                      
+                                                    </select>
+                                            </div>
+
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="yo-tab-upload-info-tag">
+
+                            <div class="col s12 ">
+                                <div class="row">
+
+                                    <form action="post">
+                                        <input type='hidden' name='csrfmiddlewaretoken' value='nl11nFnS4IE3wEBZdqjizoaTaIHEU0nsH46au22vVqmDLwg3aQa8MJDy2Ozhg2B7' />
+                                        <!--  
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="artista" class="browser-default" maxlength="255" required id="id_artista" /> <label for="id_artista">Artista:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="titulo" class="browser-default" maxlength="255" required id="id_titulo" /> <label for="id_titulo">Titulo:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="album" class="browser-default" maxlength="255" required id="id_album" /> <label for="id_album">Album:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="number" name="disco_num" id="id_disco_num" /> <label for="id_disco_num">Disco num:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="number" name="disco_total" id="id_disco_total" /> <label for="id_disco_total">Disco total:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <select name="genero" class="browser-default" maxlength="255" id="id_genero">
+  <option value="outros">outros</option>
+
+</select> <label for="id_genero">Genero:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="filename" maxlength="255" id="id_filename" /> <label for="id_filename">Filename:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="convidado" class="browser-default" maxlength="255" id="id_convidado" /> <label for="id_convidado">Convidado:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="produtor" class="browser-default" maxlength="255" id="id_produtor" /> <label for="id_produtor">Produtor:</label> 
+                                        </div>
+
+                                        
+                                        <div class="input-field col s12 m6">
+                                             <input type="text" name="outros" class="browser-default" maxlength="255" id="id_outros" /> <label for="id_outros">Outros:</label> 
+                                        </div>
+
+                                         -->
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_artista">Artista</label> <input type="text" name="artista" class="browser-default" maxlength="255" required id="id_artista" />
+                                        </div>
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_titulo">Titulo <i class="fa fa-question-circle"></i> </label> <input type="text" name="titulo" class="browser-default" maxlength="255" required id="id_titulo" />
+                                        </div>
+
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_album">Album <i class="fa fa-question-circle"></i> </label> <input type="text" name="album" class="browser-default" maxlength="255" required id="id_album" />
+                                        </div>
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_genero">Genero<i class="fa fa-question-circle"></i> </label> <select name="genero" class="browser-default" maxlength="255" id="id_genero">
+  <option value="outros">outros</option>
+
+</select>
+                                        </div>
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_convidado">Convidado  <i class="fa fa-question-circle"></i></label> <input type="text" name="convidado" class="browser-default" maxlength="255" id="id_convidado" />
+                                        </div>
+
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_produtor">Produtor <i class="fa fa-question-circle"></i></label> <input type="text" name="produtor" class="browser-default" maxlength="255" id="id_produtor" />
+                                        </div>
+                                        <div class="yo-input-field col s12 m6">
+                                            <label for="id_outros">Outros participantes <i class="fa fa-question-circle"></i></label> <input type="text" name="outros" class="browser-default" maxlength="255" id="id_outros" />
+                                        </div>
+
+                                    </form>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- fim tab upload info tag -->
+
+                        <!-- inicio tab definicoes avancadas                         -->
+                        <div id="yo-tab-definicao-avancada">
+
+                            <div class="col s12 ">
+                                <div class="row">
+                                    <form action="post">
+                                        <div class="col s6">
+                                            <p class="">
+                                                <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" checked="checked" />
+                                                <label for="yo-carregamento-comentario-permissao">Permitir Comentarios <a href="#">Saber mais</a></label>
+                                            </p>
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <label for="yo-carregamento-comentario-permissao-acesso">Mostrar <i class="fa fa-question-circle"></i></label>
+                                                    <select class="browser-default" name="carregamento-permissao-acesso" id="carregamento-permissao-acesso">s
+                                                      <option selected>Todos</option>
+                                                      <option>Todos, Excepto comentarios inapropriado</option>
+                                                      <option>Aprovado</option>
+                                                    </select>
+                                                    <p><strong>Ordenar comentario por:</strong>
+                                                        <select class="browser-default" name="carregamento-permissao-acesso" id="carregamento-permissao-acesso">
+                                                        <option  value="Publico" selected>Comentários Principais</option>
+                                                      </select>
+                                                    </p>
+
+                                                    <p class="">
+                                                        <input type="checkbox" name="yo-carregamento-classificacao" id="yo-playlist" checked="checked">
+                                                        <label for="yo-carregamento-classificacao">Todos podem ver classificações deste audio</label>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col m12">
+                                                    <span><strong>Licença e direitos de propriedade:</strong></span>
+                                                    <select class="browser-default" name="carregamento-permissao-acesso" id="carregamento-permissao-acesso">
+                                                            <option  value="Publico" selected>Licença da yotlanga Padrão</option>
+ 
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="">
+                                                    <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" checked="checked" />
+                                                    <label for="yo-carregamento-comentario-permissao">Incorporar audio <i class="fa fa-question-circle"></i></label>
+                                                </p>
+
+                                                <p class="">
+                                                    <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" checked="checked" />
+                                                    <label for="yo-carregamento-comentario-permissao">Notificar seguidores <i class="fa fa-question-circle"></i> </label>
+                                                </p>
+
+                                                <p class="">
+                                                    <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" />
+                                                    <label for="yo-carregamento-comentario-permissao">Activar restrições de idade <i class="fa fa-question-circle"></i></label>
+                                                </p>
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col s6">
+                                            <div class="row">
+                                                <div class="col m12">
+                                                    <span><strong>Categoria</strong></span>
+                                                    <select class="browser-default">
+                                                                    <option selected>Pessoas e Blogues</option>
+                                                                    <option>Filmes e Animação</option>
+                                                                    <option>Música</option>
+                                                                    <option>Animais</option>
+                                                                    <option>Desporto</option>
+                                                                    <option>Viagens e Eventos</option>
+                                                                    <option>Jogos</option>
+                                                                    <option>Comédia</option>
+                                                                    <option>Entretenimento</option>
+                                                                    <option>Noticias e Política</option>
+                                                                    <option>Ensino</option>
+                                                                    <option>Ciencia e Tecnologia</option>
+                                                                    <option>Sem fins lucrativos/Activismo</option>
+                                                                    
+                                                            </select>
+                                                </div>
+
+                                                <div class="col m12">
+                                                    <span><strong>Idioma</strong></span>
+                                                    <select class="browser-default" name="carregamento-permissao-acesso" id="carregamento-permissao-acesso">
+                                                        <option  value="Publico" selected>Selecionar Idioma</option>
+                                                        <option  value="Publico">Portugues</option>
+                                                        <option  value="Publico" >Ingles</option>
+                                                        <option  value="Publico" >Changana</option>
+                                                                <!-- <option  value="Publico" selected>P</option> -->
+                                                                
+                                                        </select>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <!-- <span for="nome_ficheiro">Nome ficheiro</span> -->
+                                                    <span><strong>Data Gravação</strong></span><br>
+                                                    <input type="text" id="nome_ficheiro" name="nome_ficheiro" class=" browser-default" style="width: 100%; height: 36px;">
+                                                    <a class="btn white black-text waves-effect">Hoje</a>
+                                                    <!-- <label for="nome_ficheiro" data-error="Somente letra e minimo 2" data-success="certo">Nome</label> -->
+                                                </div>
+
+                                                <div class="input-field col s12">
+
+                                                    <p class="">
+                                                        <span><strong>Estatistica do audio</strong></span><br>
+
+                                                        <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" />
+                                                        <label for="yo-carregamento-comentario-permissao">Tornar as estátistica do audio publicamente visiveis <i class="fa fa-question-circle"></i></label>
+                                                    </p>
+
+                                                </div>
+                                                <div class="input-field col s12">
+
+                                                    <p class="">
+                                                        <span><strong>Declaração do audio</strong></span><br>
+
+                                                        <input type="checkbox" name="yo-carregamento-comentario-permissao" id="yo-playlist" />
+                                                        <label for="yo-carregamento-comentario-permissao">Este audio contém promoções pagas como posicionamento de produtos pagos, patrocínios ou recomendações <i class="fa fa-question-circle"></i></label>
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <!-- fim tab definicoes avancadas -->
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- fim col m9  -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col s12 ">
+            <div class="pull-right">
+                <button href="#" class="btn grey darken-2">Gestor carregamento</button>
+                <button href="#" class="btn grey darken-2"><i class="fa fa-plus-circle"></i> adicionar mais ficheiros</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</div {% endblock %}
