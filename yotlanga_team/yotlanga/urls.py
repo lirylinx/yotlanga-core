@@ -13,6 +13,8 @@ urlpatterns  = [
     url(r'^$', views.indexView, name='index'),
     url(r'^registrar/$', views.registoView, name='registrar'),
     url(r'^entrar/$', views.loginView, name='entrar'),
+
+
     url(r'^sair/$', views.logOut, name='sair'),
     # url(r'^perfil/$', views.perfilView, name='perfil'),
     # url(r'^audio/$', views.audio_perfilView, name='musica'),

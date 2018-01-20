@@ -131,7 +131,7 @@ class Ficheiro(models.Model):
     tipo = models.CharField(max_length=50)
     formato = models.CharField(max_length=16)
     nome = models.CharField(max_length=255)
-    usuario = models.ForeignKey(Usuario)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     ficheiro = models.FileField(upload_to="uploads/")
     data_entrada = models.DateField(default=agora)
 
@@ -169,6 +169,6 @@ class Publicacao(models.Model):
     cabecalho = models.CharField(max_length=255)
     texto = models.CharField(max_length=32)
     is_file = models.BooleanField(default=False)
-    ficheiro = models.ForeignKey(Ficheiro)
+    ficheiro = models.ForeignKey(Ficheiro, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     data_entrada = models.DateField(default=agora)

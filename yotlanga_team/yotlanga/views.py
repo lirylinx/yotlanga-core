@@ -136,16 +136,24 @@ def loginView(request):
     if request.method == 'POST':
         """ Testando cookies no browser do usuario """
         if request.session.test_cookie_worked():
+            print("cooking working")
             request.session.delete_test_cookie()
             form = LoginForm(request.POST)
             if form.is_valid():
-                senha = request.POST["senha"]
-                usuario = request.POST["username_email"]
+            
                 try:
+                    # senha = request.POST["id_senha"]
+                    # usuario = request.POST["id_username"]ario
+                    usuario = request.POST["username_email"]
+
+                    senha = request.POST["senha"]
                     user = Usuario.objects.get(
-                        email=usuario)
+                        email=usuario)  
                     if user.getSenha() == senha:
-                        request.session['usuario_id'] = user.id
+                        request.session['username'] = user.username
+                        request.session['email'] = user.email
+                        
+                        
                         try:
                             Usuario.objects.filter(id=user.id).update(is_online=True)
                         except:
@@ -154,30 +162,52 @@ def loginView(request):
                     else:
                         msg = "ERRO Usuario ou Senha incorreto"
                 except Usuario.DoesNotExist:
-                    msg = "ERRO Usuario ou Senha incorreto"
+                    msg = "ERRO Usuario %s nao registrado" % (user)
                     user = None
             else:
                 form = LoginForm()
         else:
             user = None
             msg = "ERRO: Active cookies nas definicoes do teu browser"
+    else:
+        form = LoginForm()
+    
     request.session.set_test_cookie()
-    return render(request, 'yotlanga/entrar.html', {'form': form, 'user': user,
-                  'mensagem': msg})
+
+    form["senha"] .value = "teste"
+    return render(request, 'yotlanga/entrar_conhecido.html', {'form': form, 'user': user,  'mensagem': msg})
+
+
 
 def logOut(request):
+    """
+        Sair da sessao.
+
+        Remover os cookies e a sessao do usuaro logado   
+    """
     user = None
     try:
-        user = int(request.session['usuario_id'])
-        del request.session['usuario_id']
+        if request.session['username'] and request.session['email']:
+            del request.session['username']
+            del request.session['email']
+            user = request.session['username']
+            Usuario.objects.filter(username=user).update(is_online=False)   
+        if request.session['username']:
+            del request.session['username']
+            user = request.session['username']
+            Usuario.objects.filter(username=user).update(is_online=False)   
+        if request.session['email']:
+            del request.session['email']    
+            user = request.session['email']
+            Usuario.objects.filter(username=user).update(is_online=False)   
+     
         request.flush()
-        try:
-            Usuario.objects.filter(id=user).update(is_online=False)
-        except:
-            pass
-        user = None
     except:
         user = None
 
     return HttpResponseRedirect("/entrar")
 
+
+
+def _remover_sessao():
+    pass

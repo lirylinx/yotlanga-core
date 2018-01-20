@@ -33,8 +33,8 @@ class RegistoForm(ModelForm):
 
 
 class LoginForm(forms.Form):
-    username_email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
-    senha = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'senha'}))
+    username_email = forms.CharField(widget=forms.TextInput(attrs={'class': 'validate'}))
+    senha = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'validatel'}))
 
 
 class uploadForm(forms.Form):
