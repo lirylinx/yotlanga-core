@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% load static %} {% block titulo %} yotlanga - Bem vindo{% endblock %} {% block link %} {% endblock %} {% block content %}
+
+<!-- interface principal -->
+   <div class="container">
+     <h1>Bem vindo</h1>
+
+     <div class="row ">
+       <form  action="{% url 'entrar' %}" method="post">
+
+
+         {% csrf_token %}
+         <div class="row">
+           <!-- nome -->
+       <div class="input-field col s12 m6">
+                   <!-- <input type="text" id="entrar_username" name="entrar_username" class="validate " > -->
+                   {{ form.username_email}}
+                   <label for="nome">Email ou username</label>
+                 </div>
+
+         </div>
+         
+         <div class="row">
+           <!-- apelido -->
+           <div class="yo-tooltip">
+              <span class="yo-tooltiptext"> Senha incorreta </span> 
+           </div>
+
+           <div class="input-field col s12 m6">
+             <!-- <input type="password" id="entrar_senha" name="entrar_senha" class="validate"> -->
+             {{ form.senha}}
+             <label for="entrar_senha">Senha</label>
+           </div>
+              </div>
+
+         <div class="row">
+           <div class="yo-btn-entrar">
+           <button class="btn waves-effect waves-light" type="submit"
+           name="criar_conta"> Entrar
+           </button>
+
+         </div>
+       </form>
+
+         </div>
+
+
+   </div>
+
+     <!-- Import jQuery before materialize.js
+     <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script type="text/javascript" src="js/forms.js"></script> -->
+{%  endblock %}
+
+
+
+{% block script %}
+
+{% if  mensagem  %}
+
+<script>
+
+$(document).ready(function() {
+
+// $(".yo-tooltip").click(function(){  
+  $(".yo-tooltip .yo-tooltiptext").css({"visibility": "visible", "opacity": "1"});
+// });
+  // $(".toolstipped").tooltip("remove");
+  
+}); 
+
+</script>
+{% endif %}
+
+{% endblock %}

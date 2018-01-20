@@ -4,7 +4,12 @@
 <div class="row yo-registrar">
     <div class="col s12 m7 l5  xl5 offset-m3 offset-l6 offset-xl6">
         <!-- <div class="row"> -->
-        <form class="col s12 m12" action="index.html" method="post">
+        <form class="col s12 m12"   method="post">
+            {% if mensagem %}
+            {{ mensagem  }}
+            {% endif %}
+                {% csrf_token %}
+
             <div class="row">
                 <!-- nome -->
                 <div class="input-field col s12 m12">
@@ -282,14 +287,16 @@
         yoEach($in, checkInputValidNames)
 
         $("#criar_conta").click(function(e) {
-            invalido = true;
+            // invalido = true;
             checkData();
             checkInput();
             var $in = $('input#nome, input#apelido, input#username');
             yoEach($in, checkInputValidNames)
 
-            if (invalido)
+            if (invalido) {
+                console.log("invalido como ???")
                 e.preventDefault();
+            }
         });
 
     }
